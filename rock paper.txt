@@ -1,0 +1,61 @@
+import 'dart:io';
+import 'dart:math';
+
+class Rock {
+  List<String> options = ['rock', 'paper', 'scissors'];
+  Random index;
+
+  Rock() {
+    Random random = Random();
+    index = random;
+  }
+
+  void runApp() {
+    var userGuess;
+    var computerGuess = options[index.nextInt(options.length)];
+
+    print('Welcome to Rock, Paper, Scissors Game;\nEnter your Guess:\n');
+
+    do {
+      var computerGuess = options[index.nextInt(options.length)];
+
+      var userGuess = stdin.readLineSync();
+      print(computerGuess);
+      if (userGuess == computerGuess) {
+        print('Equal\n');
+      } else if (userGuess == 'rock' && computerGuess == 'paper') {
+        print('You Win\n');
+      } else if (userGuess == 'rock' && computerGuess == 'scissors') {
+        print('You win');
+      } else if (userGuess == 'paper' && computerGuess == 'rock') {
+        print('You win\n');
+      } else if (userGuess == 'paper' && computerGuess == 'scissors') {
+        print('I win');
+      } else if (userGuess == 'scissors' && computerGuess == 'rock') {
+        print('I win');
+      } else if (userGuess == 'scissors' && computerGuess == 'paper') {
+        print('You Win');
+      } else {
+       break;
+      }
+    } while (userGuess != 'end');
+  }
+}
+
+
+
+
+
+
+import 'dart:math';
+import 'dart:io';
+
+import 'package:amirlast/person%20class.dart';
+
+
+
+void main() {
+ Rock rock=Rock();
+ rock.runApp();
+
+}
